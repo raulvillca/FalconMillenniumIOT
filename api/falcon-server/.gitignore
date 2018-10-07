@@ -13,8 +13,8 @@ target/
 *.iws
 *.iml
 *.ipr
+../../.DS_Store
 ../.DS_Store
-.DS_Store
 
 
 # Elastic Beanstalk Files
