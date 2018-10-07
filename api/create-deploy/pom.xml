@@ -15,4 +15,24 @@
         <module>../falcon-sql</module>
     </modules>
 
+
+    <properties>
+        <project.groupId>com.example</project.groupId>
+        <project.version>0.0.1</project.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>falcon-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>falcon-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

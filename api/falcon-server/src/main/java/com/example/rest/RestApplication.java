@@ -3,16 +3,16 @@ package com.example.rest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.annotation.PostConstruct;
 import java.util.TimeZone;
 
-@SpringBootApplication
-@EntityScan(basePackageClasses = {
-		RestApplication.class,
-		Jsr310JpaConverters.class
-})
+@ComponentScan(basePackages="com.example")
+@SpringBootApplication(scanBasePackages = "com.example")
+@EnableJpaRepositories(basePackages="com.example")
+@EntityScan(basePackages = "com.example")
 public class RestApplication {
 
 	@PostConstruct
