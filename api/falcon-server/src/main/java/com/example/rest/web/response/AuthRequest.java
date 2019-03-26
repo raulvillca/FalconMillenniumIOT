@@ -3,7 +3,6 @@ package com.example.rest.web.response;
 import javax.validation.constraints.*;
 
 public class AuthRequest {
-    @NotBlank
     @Size(min = 4, max = 40)
     private String name;
 

@@ -62,10 +62,9 @@ public class UserService {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
-                .orElseThrow(() -> new AppException("User Role not set."));
+        //Role userRole = roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("No se pudo ingresar el Rol."));
 
-        user.setRoles(Collections.singleton(userRole));
+        //user.setRoles(Collections.singleton(userRole));
 
         userRepository.save(user);
         return true;

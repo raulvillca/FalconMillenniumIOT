@@ -2,7 +2,7 @@ package com.example.core.response;
 
 public class JwtAuthenticationResponse {
     private String accessToken;
-    private String tokenType = "rest";
+    private String tokenType = "falcon";
 
     public JwtAuthenticationResponse(String accessToken) {
         this.accessToken = accessToken;
