@@ -17,6 +17,7 @@ target/
 ../.DS_Store
 ../.idea
 ../../.idea
+*/target/*
 
 
 # Elastic Beanstalk Files
