@@ -4,9 +4,13 @@ pipeline {
         maven 'Maven'
     }
     stages {
-        stage('Build') {
+        stage('Directory') {
             steps {
                 sh 'cd api/create-deploy'
+            }
+        }
+        stage('Build') {
+            steps {
                 sh 'mvn -B -DskipTests clean install'
             }
         }
