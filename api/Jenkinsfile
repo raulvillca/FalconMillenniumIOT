@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn api/create-deploy/pom.xml clean install -B -DskipTests'
+                sh 'mvn -v /var/jenkins/workspace/falcon-millenium/api/create-deploy/pom.xml clean install -B -DskipTests'
             }
         }
     }
