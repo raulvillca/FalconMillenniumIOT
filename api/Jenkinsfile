@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd api & cd create-deploy'
+                sh 'cd api'
+                sh 'cd create-deploy'
                 sh 'mvn -B -DskipTests clean install'
             }
         }
