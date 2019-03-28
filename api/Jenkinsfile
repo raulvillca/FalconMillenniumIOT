@@ -4,14 +4,9 @@ pipeline {
         maven 'Maven'
     }
     stages {
-        stage('Directory') {
-            steps {
-                sh 'cd api/create-deploy'
-            }
-        }
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean install'
+                sh 'mvn api/create-deploy/pom.xml clean install -B -DskipTests'
             }
         }
     }
