@@ -9,5 +9,22 @@ pipeline {
                 sh 'mvn -v /var/jenkins/workspace/falcon-millenium/api/create-deploy/pom.xml clean install -B -DskipTests'
             }
         }
+        /*stage('SonarQube') {
+            withSonarQubeEnv('My SonarQube Server') {
+              // requires SonarQube Scanner for Maven 3.2+
+              sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+            }
+        }*/
+        stage('Docker push') {
+            steps {
+                sh 'docker push raal/vensoft:tagname'
+            }
+        }
+        stage('Deploy to staging') {
+            steps {
+                sh 'docker run -d --rm -p 8080:8080 --name FalconMillenniumIOT raal/vensoft'
+            }
+        }
     }
+
 }
